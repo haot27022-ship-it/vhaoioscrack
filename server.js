@@ -18,6 +18,32 @@ app.get("/health", (req, res) => {
   });
 });
 
+// VHAO LIVE API
+
+app.get("/api/game", (req, res) => {
+  res.json({
+    success: true,
+    name: "VHAO LIVE API",
+    version: "1.0",
+    status: "online"
+  });
+});
+
+app.get("/api/game/status", (req, res) => {
+  res.json({
+    success: true,
+    status: "online"
+  });
+});
+
+app.get("/api/game/players", (req, res) => {
+  res.json({
+    success: true,
+    total: 0,
+    players: []
+  });
+});
+
 const PORT = process.env.PORT || 10000;
 
 app.listen(PORT, "0.0.0.0", () => {
